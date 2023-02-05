@@ -1,4 +1,4 @@
-import 'package:catatanku/widgets/mybuttonpage.dart';
+import 'package:catatanku/widgets/mybutton_page.dart';
 import 'package:flutter/material.dart';
 
 class DialogBoxPage extends StatelessWidget {
@@ -22,12 +22,12 @@ class DialogBoxPage extends StatelessWidget {
           children: [
             TextField(
               controller: controller,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: "Add list",
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(

@@ -72,6 +72,7 @@ class NotesProvider extends ChangeNotifier {
             note.toMap(),
           ),
     );
+    await Future.delayed(const Duration(seconds: 2));
     fetchData();
   }
 

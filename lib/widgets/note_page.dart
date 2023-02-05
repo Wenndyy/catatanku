@@ -1,6 +1,6 @@
 import 'package:catatanku/providers/notes_provider.dart';
-import 'package:catatanku/widgets/addNotePage.dart';
-import 'package:catatanku/widgets/detailNotePage.dart';
+import 'package:catatanku/widgets/add_note_page.dart';
+import 'package:catatanku/widgets/detail_note_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -40,10 +40,10 @@ class _NotePageState extends State<NotePage> {
                 final note = notes[index];
                 return GestureDetector(
                   onTap: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DetailNote(
+                            builder: (context) => new DetailNote(
                                   id: note.id,
                                 )));
                   },

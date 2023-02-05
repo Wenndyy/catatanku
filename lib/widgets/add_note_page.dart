@@ -24,8 +24,6 @@ class _AddNotePageState extends State<AddNotePage> {
   NotesModel? get note => widget.note;
   NotesProvider? get provider => widget.provider;
 
-  String get judul => _judulController.text;
-  String get catatan => _catatanControler.text;
   @override
   void initState() {
     super.initState();
@@ -53,8 +51,7 @@ class _AddNotePageState extends State<AddNotePage> {
               color: Color(0xff624F82),
             ),
             onTap: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => const HomePage()));
+              Navigator.pop(context);
             },
           ),
           elevation: 0,

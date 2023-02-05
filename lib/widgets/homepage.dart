@@ -1,5 +1,5 @@
-import 'package:catatanku/widgets/ListPage.dart';
-import 'package:catatanku/widgets/NotePage.dart';
+import 'package:catatanku/widgets/list_page.dart';
+import 'package:catatanku/widgets/note_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

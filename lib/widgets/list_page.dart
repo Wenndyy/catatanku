@@ -1,5 +1,5 @@
 import 'package:catatanku/data/database.dart';
-import 'package:catatanku/widgets/dialogBoxPage.dart';
+import 'package:catatanku/widgets/dialog_box_page.dart';
 import 'package:catatanku/widgets/todolist_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -82,7 +82,7 @@ class _ListPageState extends State<ListPage> {
         foregroundColor: Colors.white,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(15.0))),
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
