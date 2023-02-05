@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart' show Lottie;
 
 import 'package:catatanku/widgets/homepage.dart';
@@ -33,10 +34,13 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
         onLoaded: (composition) {
           _animationController
             ..duration = composition.duration
-            ..forward().whenComplete(() => Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
-                ));
+            ..forward().whenComplete(() {
+              Get.to(HomePage());
+              // Navigator.pushReplacement(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => const HomePage()),
+              // );
+            });
         },
       ),
     );

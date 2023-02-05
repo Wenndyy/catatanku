@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyButtonPage extends StatelessWidget {
   final String text;
@@ -15,7 +16,13 @@ class MyButtonPage extends StatelessWidget {
     return MaterialButton(
       onPressed: onPressed,
       color: colorButton,
-      child: Text(text),
+      child: Text(
+        text,
+        style: GoogleFonts.poppins(
+          fontSize: 12,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }

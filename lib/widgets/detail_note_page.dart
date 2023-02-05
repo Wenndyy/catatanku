@@ -2,6 +2,7 @@ import 'package:catatanku/providers/notes_provider.dart';
 import 'package:catatanku/widgets/homepage.dart';
 import 'package:catatanku/widgets/note_operation_bottom_shet.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -36,7 +37,8 @@ class _DetailNoteState extends State<DetailNote> {
               color: Color(0xff624F82),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Get.back();
+              //Navigator.of(context).pop();
             },
           ),
           elevation: 0,

@@ -52,10 +52,14 @@ class ToDoListPage extends StatelessWidget {
               Text(
                 taskName,
                 style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    decoration: taskCompleted
-                        ? TextDecoration.lineThrough
-                        : TextDecoration.none),
+                  fontSize: 14,
+                  decoration: taskCompleted
+                      ? TextDecoration.lineThrough
+                      : TextDecoration.none,
+                  color: Colors.white,
+                  
+                  
+                ),
               ),
             ],
           ),

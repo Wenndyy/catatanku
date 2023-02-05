@@ -3,6 +3,7 @@ import 'package:catatanku/providers/notes_provider.dart';
 import 'package:catatanku/widgets/homepage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -51,7 +52,8 @@ class _AddNotePageState extends State<AddNotePage> {
               color: Color(0xff624F82),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Get.back();
+              //Navigator.pop(context);
             },
           ),
           elevation: 0,
@@ -98,10 +100,11 @@ class _AddNotePageState extends State<AddNotePage> {
                         "judul": judul,
                         "catatan": catatan
                       }).whenComplete(() {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const HomePage()));
+                        Get.offAll(HomePage());
+                        // Navigator.pushReplacement(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => const HomePage()));
                       });
                       _judulController.text = '';
                       _catatanControler.text = '';

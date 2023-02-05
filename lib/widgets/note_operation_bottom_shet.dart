@@ -3,6 +3,7 @@ import 'package:catatanku/providers/notes_provider.dart';
 import 'package:catatanku/widgets/detail_note_page.dart';
 import 'package:catatanku/widgets/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 enum ActionType { create, update }
 
@@ -111,8 +112,9 @@ class _NotesOperationBottomSheetState extends State<NotesOperationBottomSheet> {
                 catatan: catatan,
               );
               if (widget.action.isUpdate) {
-                provider.updateData(note: newData).whenComplete(() {
-                  Navigator.pop(context, widget.note?.id);
+                provider.updateData(note: newData).then((value) {
+                  Get.offAll(HomePage());
+                  setState(() {});
                 });
               }
             },

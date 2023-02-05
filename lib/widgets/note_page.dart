@@ -3,6 +3,7 @@ import 'package:catatanku/widgets/add_note_page.dart';
 import 'package:catatanku/widgets/detail_note_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 class NotePage extends StatefulWidget {
@@ -99,8 +100,9 @@ class _NotePageState extends State<NotePage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => const AddNotePage()));
+            Get.to(AddNotePage());
+            // Navigator.pushReplacement(context,
+            //     MaterialPageRoute(builder: (context) => const AddNotePage()));
           },
           backgroundColor: const Color(0xff9F73AB),
           foregroundColor: Colors.white,

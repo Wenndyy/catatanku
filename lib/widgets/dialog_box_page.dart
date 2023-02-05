@@ -15,6 +15,7 @@ class DialogBoxPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const color = Color(0xff9F73AB);
     return AlertDialog(
       content: Container(
         height: 120,
@@ -23,8 +24,10 @@ class DialogBoxPage extends StatelessWidget {
             TextField(
               controller: controller,
               decoration: const InputDecoration(
-                border: OutlineInputBorder(),
                 hintText: "Add list",
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(width: 1, color: color),
+                ),
               ),
             ),
             const SizedBox(
