@@ -1,3 +1,4 @@
+import 'package:catatanku/theme.dart';
 import 'package:catatanku/widgets/list_page.dart';
 import 'package:catatanku/widgets/note_page.dart';
 import 'package:flutter/material.dart';
@@ -59,9 +60,10 @@ class _HomePageState extends State<HomePage>
       Icon(Icons.list),
     ];
     return Scaffold(
+      backgroundColor: darkColor,
       appBar: AppBar(
         title: const Text('NoteKu'),
-        backgroundColor: const Color(0xff3F3B6C),
+        backgroundColor: darkColor,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -72,15 +74,15 @@ class _HomePageState extends State<HomePage>
         child: ClipRRect(
           borderRadius: BorderRadius.circular(50),
           child: Container(
-            color: const Color(0xff3F3B6C),
+            color: darkLightColor,
             child: TabBar(
               onTap: (value) {
                 setState(() {
                   _selectedIndex = value;
                 });
               },
-              labelColor: Colors.white,
-              unselectedLabelColor: const Color(0xff624F82),
+              labelColor: blueColor,
+              unselectedLabelColor: darkColor,
               indicator:
                   const UnderlineTabIndicator(borderSide: BorderSide.none),
               tabs: [

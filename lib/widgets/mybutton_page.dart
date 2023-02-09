@@ -1,3 +1,4 @@
+import 'package:catatanku/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,10 +13,9 @@ class MyButtonPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const colorButton = Color(0xff9F73AB);
     return MaterialButton(
       onPressed: onPressed,
-      color: colorButton,
+      color: blueColor,
       child: Text(
         text,
         style: GoogleFonts.poppins(

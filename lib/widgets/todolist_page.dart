@@ -1,3 +1,4 @@
+import 'package:catatanku/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,7 +40,7 @@ class ToDoListPage extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
-            color: const Color(0xff9F73AB),
+            color: darkLightColor,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -47,7 +48,7 @@ class ToDoListPage extends StatelessWidget {
               Checkbox(
                 value: taskCompleted,
                 onChanged: onChanged,
-                activeColor: Colors.black,
+                activeColor: blueColor,
               ),
               Text(
                 taskName,

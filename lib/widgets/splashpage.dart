@@ -1,3 +1,4 @@
+import 'package:catatanku/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart' show Lottie;
@@ -26,6 +27,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: darkColor,
       body: Lottie.asset(
         'assets/splash_lottie.json',
         controller: _animationController,

@@ -1,4 +1,5 @@
 import 'package:catatanku/providers/notes_provider.dart';
+import 'package:catatanku/theme.dart';
 import 'package:catatanku/widgets/homepage.dart';
 import 'package:catatanku/widgets/note_operation_bottom_shet.dart';
 import 'package:flutter/material.dart';
@@ -25,16 +26,16 @@ class _DetailNoteState extends State<DetailNote> {
 
   @override
   Widget build(BuildContext context) {
-    const color = Color(0xff9F73AB);
     return ChangeNotifierProvider.value(
       value: provider,
       child: Scaffold(
+        backgroundColor: darkColor,
         appBar: AppBar(
-          backgroundColor: color,
+          backgroundColor: darkColor,
           leading: GestureDetector(
-            child: const Icon(
+            child: Icon(
               Icons.arrow_back,
-              color: Color(0xff624F82),
+              color: blueColor,
             ),
             onTap: () {
               Get.back();
@@ -42,6 +43,7 @@ class _DetailNoteState extends State<DetailNote> {
             },
           ),
           elevation: 0,
+          title: Text('Detail Note'),
         ),
         body: Consumer<NotesProvider>(
           builder: (context, notesProvider, child) {
@@ -70,6 +72,7 @@ class _DetailNoteState extends State<DetailNote> {
                                 style: GoogleFonts.poppins(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
+                                  color: whiteColor,
                                 ),
                               ),
                               const SizedBox(
@@ -79,6 +82,7 @@ class _DetailNoteState extends State<DetailNote> {
                                 note.catatan,
                                 style: GoogleFonts.poppins(
                                   fontSize: 14,
+                                  color: whiteColor,
                                 ),
                                 textAlign: TextAlign.justify,
                               ),
@@ -100,16 +104,16 @@ class _DetailNoteState extends State<DetailNote> {
                                         );
                                       },
                                       style: TextButton.styleFrom(
-                                        backgroundColor: color,
+                                        backgroundColor: blueColor,
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(17),
                                         ),
                                       ),
                                       child: Text(
-                                        'Edit',
+                                        'Update',
                                         style: GoogleFonts.openSans(
-                                            color: Colors.white,
+                                            color: whiteColor,
                                             fontSize: 18,
                                             fontWeight: FontWeight.w600),
                                       ),

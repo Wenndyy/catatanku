@@ -1,4 +1,5 @@
 import 'package:catatanku/providers/notes_provider.dart';
+import 'package:catatanku/theme.dart';
 import 'package:catatanku/widgets/add_note_page.dart';
 import 'package:catatanku/widgets/detail_note_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -23,10 +24,10 @@ class _NotePageState extends State<NotePage> {
 
   @override
   Widget build(BuildContext context) {
-    const color = Color(0xff9F73AB);
     return ChangeNotifierProvider.value(
       value: provider,
       child: Scaffold(
+        backgroundColor: darkColor,
         body: Consumer<NotesProvider>(
           builder: (context, noteProvider, child) {
             final notes = provider.notes;
@@ -51,7 +52,7 @@ class _NotePageState extends State<NotePage> {
                   child: Card(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    color: color,
+                    color: darkLightColor,
                     margin: const EdgeInsets.only(top: 24, right: 24, left: 24),
                     child: Padding(
                       padding: const EdgeInsets.all(15),
@@ -100,12 +101,14 @@ class _NotePageState extends State<NotePage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Get.to(AddNotePage());
+            Get.to(AddNotePage(
+              provider: provider,
+            ));
             // Navigator.pushReplacement(context,
             //     MaterialPageRoute(builder: (context) => const AddNotePage()));
           },
-          backgroundColor: const Color(0xff9F73AB),
-          foregroundColor: Colors.white,
+          backgroundColor: blueColor,
+          foregroundColor: whiteColor,
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(15.0))),
           child: const Icon(Icons.add),

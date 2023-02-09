@@ -1,5 +1,6 @@
 import 'package:catatanku/models/notes_model.dart';
 import 'package:catatanku/providers/notes_provider.dart';
+import 'package:catatanku/theme.dart';
 import 'package:catatanku/widgets/detail_note_page.dart';
 import 'package:catatanku/widgets/homepage.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class NotesOperationBottomSheet extends StatefulWidget {
     NotesModel? note,
   }) async {
     await showModalBottomSheet(
+      backgroundColor: darkLightColor,
       isScrollControlled: true,
       context: context,
       builder: (_) {
@@ -70,7 +72,6 @@ class _NotesOperationBottomSheetState extends State<NotesOperationBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-    const color = Color(0xff9F73AB);
     return Padding(
       padding: EdgeInsets.only(
         top: 20,
@@ -84,10 +85,14 @@ class _NotesOperationBottomSheetState extends State<NotesOperationBottomSheet> {
         children: [
           TextField(
             controller: _judulCOntroller,
-            decoration: const InputDecoration(
+            style: TextStyle(
+              color: whiteColor,
+            ),
+            decoration: InputDecoration(
               hintText: 'Judul',
+              hintStyle: TextStyle(color: whiteColor),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 1, color: color),
+                borderSide: BorderSide(width: 1, color: blueColor),
               ),
             ),
           ),
@@ -96,11 +101,15 @@ class _NotesOperationBottomSheetState extends State<NotesOperationBottomSheet> {
           ),
           TextField(
             controller: _catatanControler,
+            style: TextStyle(
+              color: whiteColor,
+            ),
             maxLines: 2,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               hintText: 'Catatan',
+              hintStyle: TextStyle(color: whiteColor),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 1, color: color),
+                borderSide: BorderSide(width: 1, color: blueColor),
               ),
             ),
           ),
@@ -116,12 +125,12 @@ class _NotesOperationBottomSheetState extends State<NotesOperationBottomSheet> {
               );
               if (widget.action.isUpdate) {
                 provider.updateData(note: newData).then((value) {
-                  Get.offAll(HomePage());
+                  Get.offAll(const HomePage());
                   setState(() {});
                 });
               }
             },
-            style: ElevatedButton.styleFrom(backgroundColor: color),
+            style: ElevatedButton.styleFrom(backgroundColor: blueColor),
             child: Text(widget.action.isCreate ? 'Create' : 'Update'),
           )
         ],

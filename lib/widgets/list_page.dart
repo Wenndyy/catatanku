@@ -1,4 +1,5 @@
 import 'package:catatanku/data/database.dart';
+import 'package:catatanku/theme.dart';
 import 'package:catatanku/widgets/dialog_box_page.dart';
 import 'package:catatanku/widgets/todolist_page.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +66,7 @@ class _ListPageState extends State<ListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: darkColor,
       body: ListView.builder(
         itemCount: db.toDoList.length,
         itemBuilder: (context, index) {
@@ -78,8 +80,8 @@ class _ListPageState extends State<ListPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: createNewTask,
-        backgroundColor: const Color(0xff9F73AB),
-        foregroundColor: Colors.white,
+        backgroundColor: blueColor,
+        foregroundColor: whiteColor,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(15.0))),
         child: const Icon(Icons.add),

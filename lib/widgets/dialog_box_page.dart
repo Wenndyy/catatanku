@@ -1,3 +1,4 @@
+import 'package:catatanku/theme.dart';
 import 'package:catatanku/widgets/mybutton_page.dart';
 import 'package:flutter/material.dart';
 
@@ -17,16 +18,21 @@ class DialogBoxPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const color = Color(0xff9F73AB);
     return AlertDialog(
+      backgroundColor: darkLightColor,
       content: Container(
         height: 120,
         child: Column(
           children: [
             TextField(
               controller: controller,
-              decoration: const InputDecoration(
+              style: TextStyle(
+                color: whiteColor,
+              ),
+              decoration: InputDecoration(
                 hintText: "Add list",
+                hintStyle: TextStyle(color: whiteColor),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(width: 1, color: color),
+                  borderSide: BorderSide(width: 1, color: blueColor),
                 ),
               ),
             ),
