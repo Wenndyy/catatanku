@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> _icons = const [
+    List<Widget> icons = const [
       Icon(Icons.note),
       Icon(Icons.list),
     ];
@@ -84,9 +84,9 @@ class _HomePageState extends State<HomePage>
               indicator:
                   const UnderlineTabIndicator(borderSide: BorderSide.none),
               tabs: [
-                for (int i = 0; i < _icons.length; i++)
+                for (int i = 0; i < icons.length; i++)
                   _tabItem(
-                    _icons[i],
+                    icons[i],
                     _labels[i],
                     isSelected: i == _selectedIndex,
                   ),

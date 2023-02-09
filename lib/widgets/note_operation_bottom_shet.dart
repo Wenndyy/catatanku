@@ -91,6 +91,9 @@ class _NotesOperationBottomSheetState extends State<NotesOperationBottomSheet> {
               ),
             ),
           ),
+          const SizedBox(
+            height: 15,
+          ),
           TextField(
             controller: _catatanControler,
             maxLines: 2,

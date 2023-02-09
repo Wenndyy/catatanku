@@ -36,7 +36,7 @@ class ToDoListPage extends StatelessWidget {
           ],
         ),
         child: Container(
-          width: 300,
+          width: double.infinity,
           padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
             color: const Color(0xff9F73AB),
@@ -57,8 +57,6 @@ class ToDoListPage extends StatelessWidget {
                       ? TextDecoration.lineThrough
                       : TextDecoration.none,
                   color: Colors.white,
-                  
-                  
                 ),
               ),
             ],

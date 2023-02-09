@@ -44,7 +44,7 @@ class _NotePageState extends State<NotePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => new DetailNote(
+                            builder: (context) => DetailNote(
                                   id: note.id,
                                 )));
                   },

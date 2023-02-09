@@ -58,75 +58,79 @@ class _AddNotePageState extends State<AddNotePage> {
           ),
           elevation: 0,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            children: [
-              TextFormField(
-                controller: _judulController,
-                decoration: const InputDecoration(
-                  hintText: 'Judul',
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 1, color: color),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              TextFormField(
-                controller: _catatanControler,
-                maxLines: 5,
-                decoration: const InputDecoration(
-                  hintText: 'Catatan',
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 1, color: color),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Center(
-                child: Container(
-                  width: 295,
-                  height: 55,
-                  child: TextButton(
-                    onPressed: () async {
-                      final String judul = _judulController.text;
-                      final String catatan = _catatanControler.text;
-
-                      await _notes.add({
-                        "judul": judul,
-                        "catatan": catatan
-                      }).whenComplete(() {
-                        Get.offAll(HomePage());
-                        // Navigator.pushReplacement(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => const HomePage()));
-                      });
-                      _judulController.text = '';
-                      _catatanControler.text = '';
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: color,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(17),
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                children: [
+                  TextFormField(
+                    controller: _judulController,
+                    decoration: const InputDecoration(
+                      hintText: 'Judul',
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(width: 1, color: color),
                       ),
                     ),
-                    child: Text(
-                      'Add',
-                      style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  TextFormField(
+                    controller: _catatanControler,
+                    maxLines: 5,
+                    decoration: const InputDecoration(
+                      hintText: 'Catatan',
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(width: 1, color: color),
+                      ),
                     ),
                   ),
-                ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Center(
+                    child: Container(
+                      width: 295,
+                      height: 55,
+                      child: TextButton(
+                        onPressed: () async {
+                          final String judul = _judulController.text;
+                          final String catatan = _catatanControler.text;
+
+                          await _notes.add({
+                            "judul": judul,
+                            "catatan": catatan
+                          }).whenComplete(() {
+                            Get.offAll(HomePage());
+                            // Navigator.pushReplacement(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) => const HomePage()));
+                          });
+                          _judulController.text = '';
+                          _catatanControler.text = '';
+                        },
+                        style: TextButton.styleFrom(
+                          backgroundColor: color,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(17),
+                          ),
+                        ),
+                        child: Text(
+                          'Add',
+                          style: GoogleFonts.openSans(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

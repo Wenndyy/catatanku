@@ -35,11 +35,11 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           _animationController
             ..duration = composition.duration
             ..forward().whenComplete(() {
-              Get.to(HomePage());
-              // Navigator.pushReplacement(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => const HomePage()),
-              // );
+              // Get.to(HomePage());
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const HomePage()),
+              );
             });
         },
       ),
