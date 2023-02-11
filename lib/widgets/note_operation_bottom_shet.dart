@@ -1,15 +1,13 @@
 import 'package:catatanku/models/notes_model.dart';
 import 'package:catatanku/providers/notes_provider.dart';
-import 'package:catatanku/theme.dart';
-import 'package:catatanku/widgets/detail_note_page.dart';
-import 'package:catatanku/widgets/homepage.dart';
+import 'package:catatanku/shared/theme.dart';
+import 'package:catatanku/widgets/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-enum ActionType { create, update }
+enum ActionType { update }
 
 extension ActionTypeExtension on ActionType {
-  bool get isCreate => this == ActionType.create;
   bool get isUpdate => this == ActionType.update;
 }
 
@@ -36,7 +34,7 @@ class NotesOperationBottomSheet extends StatefulWidget {
       context: context,
       builder: (_) {
         return NotesOperationBottomSheet(
-          action: note != null ? ActionType.update : ActionType.create,
+          action: ActionType.update,
           provider: provider,
           note: note,
         );
@@ -131,7 +129,7 @@ class _NotesOperationBottomSheetState extends State<NotesOperationBottomSheet> {
               }
             },
             style: ElevatedButton.styleFrom(backgroundColor: blueColor),
-            child: Text(widget.action.isCreate ? 'Create' : 'Update'),
+            child: const Text('Update'),
           )
         ],
       ),

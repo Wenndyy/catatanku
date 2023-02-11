@@ -1,9 +1,8 @@
-import 'package:catatanku/theme.dart';
+import 'package:catatanku/shared/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:lottie/lottie.dart' show Lottie;
 
-import 'package:catatanku/widgets/homepage.dart';
+import 'package:catatanku/widgets/home_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -37,7 +36,6 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           _animationController
             ..duration = composition.duration
             ..forward().whenComplete(() {
-              // Get.to(HomePage());
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const HomePage()),

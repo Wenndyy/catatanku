@@ -1,4 +1,4 @@
-import 'package:catatanku/theme.dart';
+import 'package:catatanku/shared/theme.dart';
 import 'package:catatanku/widgets/list_page.dart';
 import 'package:catatanku/widgets/note_page.dart';
 import 'package:flutter/material.dart';

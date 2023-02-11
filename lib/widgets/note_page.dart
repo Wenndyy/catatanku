@@ -1,8 +1,7 @@
 import 'package:catatanku/providers/notes_provider.dart';
-import 'package:catatanku/theme.dart';
+import 'package:catatanku/shared/theme.dart';
 import 'package:catatanku/widgets/add_note_page.dart';
 import 'package:catatanku/widgets/detail_note_page.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
@@ -104,8 +103,6 @@ class _NotePageState extends State<NotePage> {
             Get.to(AddNotePage(
               provider: provider,
             ));
-            // Navigator.pushReplacement(context,
-            //     MaterialPageRoute(builder: (context) => const AddNotePage()));
           },
           backgroundColor: blueColor,
           foregroundColor: whiteColor,

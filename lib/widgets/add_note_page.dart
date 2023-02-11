@@ -1,8 +1,7 @@
 import 'package:catatanku/models/notes_model.dart';
 import 'package:catatanku/providers/notes_provider.dart';
-import 'package:catatanku/theme.dart';
-import 'package:catatanku/widgets/homepage.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:catatanku/shared/theme.dart';
+import 'package:catatanku/widgets/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -54,7 +53,6 @@ class _AddNotePageState extends State<AddNotePage> {
 
   @override
   Widget build(BuildContext context) {
-    const color = Color(0xff9F73AB);
     return ChangeNotifierProvider.value(
       value: provider,
       child: Scaffold(
@@ -68,11 +66,10 @@ class _AddNotePageState extends State<AddNotePage> {
             ),
             onTap: () {
               Get.back();
-              //Navigator.pop(context);
             },
           ),
           elevation: 0,
-          title: Text('Add Note'),
+          title: const Text('Add Note'),
         ),
         body: ListView(
           children: [
@@ -119,9 +116,6 @@ class _AddNotePageState extends State<AddNotePage> {
                       height: 55,
                       child: TextButton(
                         onPressed: () async {
-                          // final String judul = _judulController.text;
-                          // final String catatan = _catatanControler.text;
-
                           final newData = NotesModel(
                             id: widget.note?.id ?? '',
                             judul: judul,
@@ -133,17 +127,6 @@ class _AddNotePageState extends State<AddNotePage> {
                               setState(() {});
                             });
                           }
-                          // await provider?.addData(note: newNote).whenComplete(
-                          //   () {
-                          //     Get.offAll(const HomePage());
-                          //     // Navigator.pushReplacement(
-                          //     //     context,
-                          //     //     MaterialPageRoute(
-                          //     //         builder: (context) => const HomePage()));
-                          //   },
-                          // );
-                          // _judulController.text = '';
-                          // _catatanControler.text = '';
                         },
                         style: TextButton.styleFrom(
                           backgroundColor: blueColor,

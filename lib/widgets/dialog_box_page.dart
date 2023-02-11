@@ -1,4 +1,4 @@
-import 'package:catatanku/theme.dart';
+import 'package:catatanku/shared/theme.dart';
 import 'package:catatanku/widgets/mybutton_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,6 @@ class DialogBoxPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const color = Color(0xff9F73AB);
     return AlertDialog(
       backgroundColor: darkLightColor,
       content: Container(

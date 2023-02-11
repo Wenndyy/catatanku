@@ -1,6 +1,5 @@
 import 'package:catatanku/providers/notes_provider.dart';
-import 'package:catatanku/theme.dart';
-import 'package:catatanku/widgets/homepage.dart';
+import 'package:catatanku/shared/theme.dart';
 import 'package:catatanku/widgets/note_operation_bottom_shet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,11 +38,10 @@ class _DetailNoteState extends State<DetailNote> {
             ),
             onTap: () {
               Get.back();
-              //Navigator.of(context).pop();
             },
           ),
           elevation: 0,
-          title: Text('Detail Note'),
+          title: const Text('Detail Note'),
         ),
         body: Consumer<NotesProvider>(
           builder: (context, notesProvider, child) {
